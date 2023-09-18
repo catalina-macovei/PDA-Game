@@ -1,0 +1,43 @@
+# comment lines (skip)
+# exemplu de fisier de configurare
+# fiecare simbol din sigma pe un rand nou
+# respectati obligatoriu spatierea , de ex: 'q1,0,q1' si NU 'q1, 0, q1'
+# pentru DFA exista 3 sectiuni Sigma, States, Transitions
+
+Sigma
+citesc_regula
+
+# aici scriu alfabetul permis pentru lista DFA-lui
+# * inseamna empty string
+# to_remove- camera precedenta
+# to_add - camera curenta in care intra
+# key - trebuie sa am lista, daca nu am asta e , fac altceva
+
+Theta
+key
+to_remove
+to_add
+*
+
+# States -  adica starile, sunt identificate prin "q1, q2, ..., qn" - fiecare pe rand nou
+# q0,S - inseamna starea de inceput
+# q3,F - inseamna starea de final
+
+States
+q0,S
+q1,F
+q2,F
+q3,F
+
+# Transitions - fiecare tranzitie va fi un tuplu cu 3 termeni exemplu: (q0,0,q1)
+
+Transitions
+q0,citesc_regula,key,to_remove,to_add,q1
+q0,citesc_regula,*,to_remove,to_add,q2
+q0,citesc_regula,*,*,*,q3
+
+
+# pentru orice simbol am o tranzitie, starea initiala si multimea starilor finale pentru optimizare
+
+# Realizat de: Macovei Catalina, grupa 142, adresa: catalina.macovei@s.unibuc.ro
+

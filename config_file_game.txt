@@ -1,0 +1,72 @@
+# 142, Toma Alexandra, alexandra.toma1@s.unibuc.ro
+# 142, Macovei Catalina, catalina.macovei@s.unibuc.ro
+
+# Respectati spatierile!
+# Sunt 3 sectiuni obligatorii: Vars, Sigma, Rules
+
+Vars
+# COMMAND - prima variabila in regula de start (* se pune dupa variabila de start)
+
+COMMAND
+*
+ROOM
+VERB
+ITEM
+ACTION
+
+Sigma
+go
+take
+drop
+look
+inventory
+entrance_hall
+dining_room
+kitchen
+armoury
+treasury
+library
+pantry
+throne_room
+wizard_s_study
+secret_exit
+key
+invitation
+chef_s_hat
+spoon
+sword
+crown
+ancient_coin
+spell_book
+magic_wand
+
+
+# Obligatoriu de scris in acest format:  'A -> B', respectand spatierile
+Rules
+COMMAND -> go,ROOM
+COMMAND -> VERB,ITEM
+COMMAND -> ACTION
+ROOM -> entrance_hall
+ROOM -> dining_room
+ROOM -> kitchen
+ROOM -> armoury
+ROOM -> treasury
+ROOM -> library
+ROOM -> pantry
+ROOM -> throne_room
+ROOM -> wizard_s_study
+ROOM -> secret_exit
+VERB -> take
+VERB -> drop
+ITEM -> key
+ITEM -> invitation
+ITEM -> chef_s_hat
+ITEM -> spoon
+ITEM -> sword
+ITEM -> crown
+ITEM -> ancient_coin
+ITEM -> spell_book
+ITEM -> magic_wand
+ACTION -> look
+ACTION -> inventory
+

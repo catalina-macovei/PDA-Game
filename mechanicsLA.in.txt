@@ -1,0 +1,70 @@
+# 142, Toma Alexandra, alexandra.toma1@s.unibuc.ro
+# 142, Macovei Catalina, catalina.macovei@s.unibuc.ro
+
+# all items needed for the transition from a room into another
+Sigma
+go
+take
+
+
+# states are the rooms
+States
+
+entrance_hall,S
+dining_room
+kitchen
+armoury
+treasury
+library
+pantry
+throne_room
+wizard_s_study
+secret_exit,F
+
+
+# items that could be in possession -> items for inventory
+Theta
+
+key
+invitation
+chef_s_hat
+spoon
+sword
+crown
+ancient_coin
+spell_book
+magic_wand
+
+# Mechanisation of the player's route
+Transitions
+entrance_hall,go,key,armoury
+entrance_hall,go,*,dining_room
+armoury,go,*,entrance_hall
+armoury,go,crown,throne_room
+armoury,go,sword,treasury
+dining_room,go,invitation,entrance_hall
+dining_room,go,chef_s_hat,kitchen
+dining_room,go,sword,treasury
+throne_room,go,key,armoury
+throne_room,go,spell_book,wizard_s_study
+treasury,go,key,armoury
+treasury,go,*,dining_room
+treasury,go,spell_book,wizard_s_study
+treasury,go,ancient_coin,library
+wizard_s_study,go,crown,throne_room
+wizard_s_study,go,sword,treasury
+wizard_s_study,go,magic_wand,secret_exit
+library,go,sword,treasury
+library,go,magic_wand,secret_exit
+kitchen,go,spoon,pantry
+kitchen,go,*,dining_room
+pantry,go,chef_s_hat,kitchen
+entrance_hall,take,key,entrance_hall
+dining_room,take,invitation,dining_room
+dining_room,take,chef_s_hat,dining_room
+armoury,take,sword,armoury
+armoury,take,crown,armoury
+treasury,take,ancient_coin,treasury
+kitchen,take,spoon,pantry
+library,take,spell_book,library
+wizard_s_study,take,magic_wand,wizard_s_study
